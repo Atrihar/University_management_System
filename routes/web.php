@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,6 @@ Route::get('/', function () {
 
 // Login page for all the users
 Route::get('/login', [AuthController::class, 'login']);
+
+// admin dashboard
+Route::get('/admin', [AdminController::class, 'index']);
