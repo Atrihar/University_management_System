@@ -24,12 +24,17 @@
                     <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-user') }}"></use>
                 </svg> Users</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="#"><span
-                            class="nav-icon"></span> Teachers</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><span
-                            class="nav-icon"></span> Student</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><span
-                            class="nav-icon"></span> Admin</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('admin/all_teachers') }}"><span class="nav-icon"></span>
+                        Teachers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('admin/all_students') }}"><span class="nav-icon"></span>
+                        Student</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('admin/admins') }}"><span class="nav-icon"></span> Admin</a>
+                </li>
             </ul>
         </li>
 
@@ -38,12 +43,14 @@
                     <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-user-plus') }}"></use>
                 </svg> Add User</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="#"><span
-                            class="nav-icon"></span> Teachers</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><span
-                            class="nav-icon"></span> Student</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><span
-                            class="nav-icon"></span> Admin</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('admin/add_users') }}"><span class="nav-icon"></span> User
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('admin/add_students') }}"><span class="nav-icon"></span> Student
+                    </a>
+                </li>
             </ul>
         </li>
 
@@ -52,15 +59,18 @@
                     <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-group') }}"></use>
                 </svg> Groups</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="#"><span
-                            class="nav-icon"></span> Completed</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><span
-                            class="nav-icon"></span> Running</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><span
-                            class="nav-icon"></span> Unassigned</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><span class="nav-icon"></span> Completed</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><span class="nav-icon"></span> Running</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><span class="nav-icon"></span> Unassigned</a>
+                </li>
             </ul>
         </li>
 
 
-    {{-- <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button> --}}
+        {{-- <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button> --}}
 </div>

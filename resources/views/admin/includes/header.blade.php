@@ -13,9 +13,9 @@
         </svg>
     </a>
 
-    <ul class="header-nav d-none d-md-flex">
+    {{-- <ul class="header-nav d-none d-md-flex">
         <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-    </ul>
+    </ul> --}}
 
     {{-- <ul class="header-nav ms-auto">
         <li class="nav-item">
@@ -56,6 +56,7 @@
         </li>
     </ul>
 </div>
+
 
 <div class="header-divider"></div>
 
