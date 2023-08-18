@@ -35,4 +35,19 @@ class AdminController extends Controller
     {
         return view('admin.pages.add_users');
     }
+
+    public function completed()
+    {
+        return view('admin.pages.completed');
+    }
+
+    public function running()
+    {
+        return view('admin.pages.running');
+    }
+
+    public function unassigned()
+    {
+        return view('admin.pages.unassigned');
+    }
 }

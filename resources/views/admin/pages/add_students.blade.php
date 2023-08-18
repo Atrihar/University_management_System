@@ -22,6 +22,11 @@
                                     <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-1003">
                                         <form class="row g-3">
 
+                                            <div class="col-md-12">
+                                                    <label class="form-label" for="std_photo">Enter Student's Photo</label>
+                                                    <input class="form-control" id="std_photo" type="file">
+                                            </div>
+
                                             <div class="col-md-6">
                                                 <label class="form-label" for="std_name">Name</label>
                                                 <input class="form-control" id="std_name" type="text">
@@ -117,7 +122,7 @@
                                             <div class="col-12">
                                                 <div class="form-check">
                                                     <input class="form-check-input" id="gridCheck" type="checkbox">
-                                                    <label class="form-check-label" for="gridCheck">Check me out</label>
+                                                    <label class="form-check-label" for="gridCheck">Filled Up</label>
                                                 </div>
                                             </div>
 

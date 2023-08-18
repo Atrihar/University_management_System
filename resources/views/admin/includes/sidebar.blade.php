@@ -13,7 +13,7 @@
     <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
 
 
-        <li class="nav-item"><a class="nav-link" href="index.html">
+        <li class="nav-item"><a class="nav-link" href="{{ url('admin') }}">
                 <svg class="nav-icon">
                     <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-grid') }}"></use>
                 </svg> Dashboard</a></li>
@@ -60,13 +60,13 @@
                 </svg> Groups</a>
             <ul class="nav-group-items">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><span class="nav-icon"></span> Completed</a>
+                    <a class="nav-link" href="{{ url('admin/completed') }}"><span class="nav-icon"></span> Completed</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><span class="nav-icon"></span> Running</a>
+                    <a class="nav-link" href="{{ url('admin/running') }}"><span class="nav-icon"></span> Running</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><span class="nav-icon"></span> Unassigned</a>
+                    <a class="nav-link" href="{{ url('admin/unassigned') }}"><span class="nav-icon"></span> Unassigned</a>
                 </li>
             </ul>
         </li>

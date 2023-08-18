@@ -19,3 +19,6 @@ Route::get('admin/all_students', [AdminController::class, 'all_students']);
 Route::get('admin/admins', [AdminController::class, 'admins']);
 Route::get('admin/add_users', [AdminController::class, 'add_users']);
 Route::get('admin/add_students', [AdminController::class, 'add_students']);
+Route::get('admin/completed', [AdminController::class, 'completed']);
+Route::get('admin/running', [AdminController::class, 'running']);
+Route::get('admin/unassigned', [AdminController::class, 'unassigned']);
