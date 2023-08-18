@@ -57,16 +57,6 @@
                                                 <input class="form-control" id="std_m_name" type="text">
                                             </div>
 
-                                            <div class="col-md-6">
-                                                <label class="form-label" for="std_f_tel">Father's Phone Number</label>
-                                                <input class="form-control" id="std_f_tel" type="tel">
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label class="form-label" for="std_m_tel">Mother's Phone Number</label>
-                                                <input class="form-control" id="std_m_tel" type="tel">
-                                            </div>
-
                                             <div class="col-12">
                                                 <label class="form-label" for="std_present_address">Present Address</label>
                                                 <input class="form-control" id="std_present_address" type="text"

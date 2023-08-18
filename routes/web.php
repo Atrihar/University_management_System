@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TeacherController;
 
 
 Route::get('/', function () {
@@ -11,8 +12,10 @@ Route::get('/', function () {
 
 // Login page for all the users
 Route::get('/login', [AuthController::class, 'login']);
+Route::get('/std_register', [AuthController::class, 'std_register']);
+Route::get('/teacher_registation', [AuthController::class, 'teacher_register']);
 
-// admin dashboard
+// admin controller
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('admin/all_teachers', [AdminController::class, 'all_teachers']);
 Route::get('admin/all_students', [AdminController::class, 'all_students']);
@@ -22,3 +25,8 @@ Route::get('admin/add_students', [AdminController::class, 'add_students']);
 Route::get('admin/completed', [AdminController::class, 'completed']);
 Route::get('admin/running', [AdminController::class, 'running']);
 Route::get('admin/unassigned', [AdminController::class, 'unassigned']);
+
+
+
+// teacher controller
+Route::get('/teacher',[TeacherController::class,'home']);

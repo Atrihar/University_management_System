@@ -11,4 +11,14 @@ class AuthController extends Controller
         return view('login');
     }
 
+    public function std_register()
+    {
+        return view('registation');
+    }
+
+    public function teacher_register()
+    {
+        return view('teacher_registation');
+    }
+
 }
