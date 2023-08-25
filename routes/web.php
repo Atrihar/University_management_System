@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\StudentController;
 
 
 Route::get('/', function () {
@@ -33,3 +34,11 @@ Route::get('/teacher',[TeacherController::class,'home']);
 Route::get('teacher/completed',[TeacherController::class,'completed']);
 Route::get('teacher/running',[TeacherController::class,'running']);
 Route::get('teacher/profile',[TeacherController::class,'profile']);
+
+
+//student controller
+Route::get('/student',[StudentController::class,'home']);
+Route::get('student/group',[StudentController::class,'group']);
+Route::get('student/complete',[StudentController::class,'completed']);
+Route::get('student/pendeng',[StudentController::class,'running']);
+Route::get('student/profile',[StudentController::class,'profile']);

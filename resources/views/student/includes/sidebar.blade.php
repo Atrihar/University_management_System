@@ -5,7 +5,7 @@
         <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
             aria-hidden="true" id="iconSidenav"></i>
 
-        <a class="navbar-brand m-0" href="{{ url('/teacher') }}">
+        <a class="navbar-brand m-0" href="{{ url('/student') }}">
             <img src="{{ asset('./assets/img/logo-ct-dark.png') }}" class="navbar-brand-img h-100" alt="main_logo">
 
             <span class="ms-1 font-weight-bold">University Management</span>
@@ -20,7 +20,7 @@
         <ul class="navbar-nav">
 
             <li class="nav-item">
-                <a class="nav-link active" href="{{ url('/teacher') }}">
+                <a class="nav-link active" href="{{ url('/student') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
@@ -30,27 +30,37 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ url('teacher/completed') }}">
+                <a class="nav-link " href="{{ url('student/group') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-calendar-grid-58 text-success text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Completed Groups</span>
+                    <span class="nav-link-text ms-1">Group Info</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ url('teacher/running') }}">
+                <a class="nav-link " href="{{ url('student/complete') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Running Groups</span>
+                    <span class="nav-link-text ms-1">Completed Assignment</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ url('teacher/profile') }}">
+                <a class="nav-link " href="{{ url('student/pendeng') }}">
+                    <div
+                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Pending Assignment</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link " href="{{ url('student/profile') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
