@@ -30,3 +30,6 @@ Route::get('admin/unassigned', [AdminController::class, 'unassigned']);
 
 // teacher controller
 Route::get('/teacher',[TeacherController::class,'home']);
+Route::get('teacher/completed',[TeacherController::class,'completed']);
+Route::get('teacher/running',[TeacherController::class,'running']);
+Route::get('teacher/profile',[TeacherController::class,'profile']);
