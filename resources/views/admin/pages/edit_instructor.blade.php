@@ -20,126 +20,96 @@
                                 <div class="tab-content rounded-bottom">
 
                                     <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-1003">
-                                        <form method="post" action="{{ url('student/addstudent') }}" class="row g-3">
+                                        <form method="post" action="{{ url('update_instructor/' . $instructor->id) }}" class="row g-3">
                                             @csrf
 
                                             <div class="col-md-12">
                                                 <label class="form-label" for="profile_pic">Enter Student's Photo</label>
-                                                <input class="form-control" id="profile_pic" name="profile_pic"
+                                                <input class="form-control" value="{{ $instructor->profile_pic }}" id="profile_pic" name="profile_pic"
                                                     type="file">
                                             </div>
 
                                             <div class="col-md-6">
                                                 <label class="form-label" for="name">Name</label>
-                                                <input class="form-control" id="name" name="name" type="text">
+                                                <input class="form-control" value="{{ $instructor->name }}" id="name" name="name" type="text">
                                             </div>
 
                                             <div class="col-md-6">
                                                 <label class="form-label" for="std_ID">ID</label>
-                                                <input class="form-control" id="std_ID" name="std_ID" type="number">
+                                                <input class="form-control" id="std_ID" value="{{ $instructor->std_ID }}" name="std_ID" type="number">
                                             </div>
 
                                             <div class="col-md-6">
                                                 <label class="form-label" for="email">Email</label>
-                                                <input class="form-control" id="email" name="email" type="email">
+                                                <input class="form-control"  value="{{ $instructor->email }}" id="email" name="email" type="email">
                                             </div>
 
                                             <div class="col-md-6">
                                                 <label class="form-label" for="contact_no">Phone Number</label>
-                                                <input class="form-control" id="contact_no" name="contact_no"
+                                                <input class="form-control" value="{{ $instructor->contact_no }}" id="contact_no" name="contact_no"
                                                     type="tel">
                                             </div>
 
                                             <div class="col-md-6">
                                                 <label class="form-label" for="fathers_name">Father's Name</label>
-                                                <input class="form-control" id="fathers_name" name="fathers_name"
+                                                <input class="form-control" value="{{ $instructor->fathers_name }}" id="fathers_name" name="fathers_name"
                                                     type="text">
                                             </div>
 
                                             <div class="col-md-6">
                                                 <label class="form-label" for="mothers_name">Mother's Name</label>
-                                                <input class="form-control" id="mothers_name" name="mothers_name"
+                                                <input class="form-control" value="{{ $instructor->mothers_name }}" id="mothers_name" name="mothers_name"
                                                     type="text">
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label class="form-label" for="fathers_contact_no">Father's Phone
-                                                    Number</label>
-                                                <input class="form-control" id="fathers_contact_no"
-                                                    name="fathers_contact_no" type="tel">
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label class="form-label" for="mothers_contact_no">Mother's Phone
-                                                    Number</label>
-                                                <input class="form-control" id="mothers_contact_no"
-                                                    name="mothers_contact_no" type="tel">
                                             </div>
 
                                             <div class="col-12">
                                                 <label class="form-label" for="present_address">Present Address</label>
-                                                <input class="form-control" id="present_address" name="present_address"
+                                                <input class="form-control" value="{{ $instructor->present_address }}" id="present_address" name="present_address"
                                                     type="text" placeholder="1234 Main St">
                                             </div>
 
                                             <div class="col-md-6">
                                                 <label class="form-label" for="present_city">City</label>
-                                                <input class="form-control" id="present_city" name="present_city"
+                                                <input class="form-control" value="{{ $instructor->present_city }}" id="present_city" name="present_city"
                                                     type="text">
                                             </div>
 
                                             <div class="col-md-4">
                                                 <label class="form-label" for="present_state">State</label>
-                                                <input class="form-control" id="present_state" name="present_state"
+                                                <input class="form-control" value="{{ $instructor->present_state }}" id="present_state" name="present_state"
                                                     type="text">
                                             </div>
 
                                             <div class="col-md-2">
                                                 <label class="form-label" for="present_zip_code">Zip</label>
-                                                <input class="form-control" id="present_zip_code" name="present_zip_code"
+                                                <input class="form-control" value="{{ $instructor->present_zip_code }}" id="present_zip_code" name="present_zip_code"
                                                     type="text">
                                             </div>
 
                                             <div class="col-12">
                                                 <label class="form-label" for="parmenent_address">Parmenent
                                                     Address</label>
-                                                <input class="form-control" id="parmenent_address"
+                                                <input class="form-control" value="{{ $instructor->parmenent_address }}" id="parmenent_address"
                                                     name="parmenent_address" type="text"
                                                     placeholder="Apartment, studio, or floor">
                                             </div>
 
                                             <div class="col-md-6">
                                                 <label class="form-label" for="parmenent_city">City</label>
-                                                <input class="form-control" id="parmenent_city" name="parmenent_city"
+                                                <input class="form-control" value="{{ $instructor->parmenent_city }}" id="parmenent_city" name="parmenent_city"
                                                     type="text">
                                             </div>
 
                                             <div class="col-md-4">
                                                 <label class="form-label" for="parmenent_state">State</label>
-                                                <input class="form-control" id="parmenent_state" name="parmenent_state"
+                                                <input class="form-control" value="{{ $instructor->parmenent_state }}" id="parmenent_state" name="parmenent_state"
                                                     type="text">
                                             </div>
 
                                             <div class="col-md-2">
                                                 <label class="form-label" for="parmenent_zip_code">Zip</label>
-                                                <input class="form-control" id="parmenent_zip_code"
+                                                <input class="form-control" value="{{ $instructor->parmenent_zip_code }}" id="parmenent_zip_code"
                                                     name="parmenent_zip_code" type="text">
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label class="form-label" for="batch">Batch</label>
-                                                <input class="form-control" id="batch" name="batch"
-                                                    type="number">
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label class="form-label" for="password">Password</label>
-                                                <input class="form-control" id="password" name="password" type="password">
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label class="form-label" for="cnf_password">Confirm Password</label>
-                                                <input class="form-control" id="cnf_password" name="cnf_password" type="password">
                                             </div>
 
                                             <div class="col-12">
@@ -150,7 +120,7 @@
                                             </div>
 
                                             <div class="col-12">
-                                                <button class="btn btn-primary" type="submit">Register</button>
+                                                <button class="btn btn-primary" type="submit">Update</button>
                                             </div>
 
                                         </form>

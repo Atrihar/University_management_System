@@ -1,53 +1,55 @@
 @extends('admin.layouts.defult')
 
 @section('content')
+    <div class="card mb-4">
 
-<div class="card mb-4">
-
-    <div class="card-header">
-        <strong>All Students</strong>
-    </div>
-
-    <div class="card-body">
-
-      <div class="example">
-
-        <div class="tab-content rounded-bottom">
-          <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-1019">
-            <table class="table">
-              <thead class="table-dark">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="card-header">
+            <strong>All Students</strong>
         </div>
-      </div>
-    </div>
-  </div>
 
+        <div class="card-body">
+
+            <div class="example">
+
+                <div class="tab-content rounded-bottom">
+                    <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-1019">
+                        <table class="table">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Batch</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Contact no</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($students as $s)
+                                    <tr>
+                                        <td>{{ $s->std_ID }}</td>
+                                        <td>{{ $s->name }}</td>
+                                        <td>{{ $s->batch }}</td>
+                                        <td>{{ $s->email }}</td>
+                                        <td>{{ $s->contact_no }}</td>
+                                        <td>
+                                            @if ($s->is_approved == 0)
+                                                <a href="{{ url('admin/approve/' . $s->id) }}">Approve</a>
+                                            @else
+                                                <label>Approved</label>
+                                            @endif
+                                        </td>
+                                        <td><a href="{{ url('/edit_student/' . $s->id) }}" class="btn btn-primary btn-sm" role="button">Edit</a></td>
+                                        <td><a href="{{ url('/delete_student/' . $s->id) }}" class="btn btn-danger btn-sm" role="button">Delete</a></td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

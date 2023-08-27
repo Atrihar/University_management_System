@@ -40,22 +40,12 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ url('student/complete') }}">
+                <a class="nav-link " href="{{ url('student/assignment') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Completed Assignment</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link " href="{{ url('student/pendeng') }}">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Pending Assignment</span>
+                    <span class="nav-link-text ms-1">Assignment</span>
                 </a>
             </li>
 
@@ -70,7 +60,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link " href=#>
+                <a class="nav-link " href="{{ url('signout')}}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-collection text-danger text-sm opacity-10"></i>
