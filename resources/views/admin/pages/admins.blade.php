@@ -21,6 +21,9 @@
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Contact</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,6 +32,17 @@
                             <td>{{ $u->name }}</td>
                             <td>{{ $u->email }}</td>
                             <td>{{ $u->contact_no }}</td>
+                            <td>
+                                @if ($u->is_approved == 0)
+                                    <a href="{{ url('admin/userapprove/' . $u->id) }}">Approve</a>
+                                @else
+                                    <label>Approved</label>
+                                @endif
+                            </td>
+                            <td><a href="{{ url('/edit_instructor/' . $u->id) }}" class="btn btn-primary btn-sm"
+                                    role="button">Edit</a></td>
+                            <td><a href="{{ url('/delete_instructor/' . $u->id) }}"
+                                    class="btn btn-danger btn-sm" role="button">Delete</a></td>
                         </tr>
                     @endforeach
                 </tbody>

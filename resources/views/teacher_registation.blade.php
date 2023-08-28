@@ -96,13 +96,13 @@
                                             <input class="form-control" id="present_zip_code" name="present_zip_code" type="text">
                                         </div>
 
-                                        <div class="col-md-12">
+                                        {{-- <div class="col-md-12">
                                             <select class="form-select" name="role" id="role" aria-label="Default select example">
                                                 <option selected="">Select Role</option>
                                                 <option value="Admin">Admin</option>
                                                 <option value="Teacher">Teacher</option>
                                             </select>
-                                        </div>
+                                        </div> --}}
 
                                         <div class="col-md-6">
                                             <label class="form-label" for="password">Password</label>

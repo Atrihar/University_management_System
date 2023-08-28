@@ -50,7 +50,7 @@ class AuthController extends Controller
         $contact_no = $req->contact_no;
         $password = $req->password;
         $cnf_password = $req->cnf_password;
-        $role = $req->role;
+        $role = "Teacher";
 
         if ($password == $cnf_password) {
             $user_exists = Teacher::where('email', '=', $email)->first();
@@ -74,7 +74,7 @@ class AuthController extends Controller
                 $user->role = $role;
                 $user->password = md5($password);
                 if ($user->save()) {
-                    return redirect()->back();
+                    return redirect('/login');
                 }
             }
         }
@@ -126,7 +126,7 @@ class AuthController extends Controller
                 $user->batch = $batch;
                 $user->password = md5($password);
                 if ($user->save()) {
-                    return redirect()->back();
+                    return redirect('/login');
                 }
             }
         }
@@ -160,11 +160,16 @@ class AuthController extends Controller
                 return redirect()->back()->with('info', 'User not approved yet.');
             }
         } elseif ($std) {
-            Session::put('username', $std->name);
-            Session::put('userid', $std->id);
-            Session::put('user_id', $std->std_ID);
-            Session::put('useremail', $std->email);
-            return redirect('/student/profile');
+
+            if ($std->is_approved == 1) {
+                Session::put('username', $std->name);
+                Session::put('userid', $std->id);
+                Session::put('user_id', $std->std_ID);
+                Session::put('useremail', $std->email);
+                return redirect('/student/profile');
+            } else {
+                return redirect()->back()->with('info', 'User not approved yet.');
+            }
         } else {
             return redirect()->back()->with('info', 'Invalid email or password');
         }
