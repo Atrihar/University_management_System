@@ -6,11 +6,13 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Assignment Name: {{ $assignment_detailes[0]->name }}</h4>
+                <h5 class="card-title">Assignment Name: {{ $assignment_detailes[0]->name }}</h5>
 
-                <h5>Due: {{ $assignment_detailes[0]->due }}</h5>
+                <h6>Due: {{ $assignment_detailes[0]->due }}</h6>
 
-                <h5>Submission Date: {{ $assignment_detailes[0]->submission }}</h5>
+                <p>&nbsp;</p>
+
+                <h6>Submission Date: {{ $assignment_detailes[0]->submission }}</h6>
 
                 <p>&nbsp;</p>
 
@@ -19,7 +21,6 @@
                     {{ $assignment_detailes[0]->ques }}
                 </p>
 
-                <p>&nbsp;</p>
 
                 <h6>Attachment: </h6>
                 <p>
@@ -30,8 +31,6 @@
                         </i>
                     </a>
                 </p>
-
-                <p>&nbsp;</p>
 
                 <h6>Ans: </h6>
                 @if ($assignment_detailes[0]->ansr)
@@ -51,7 +50,7 @@
                     </p>
                 @endif
 
-                <p>&nbsp;</p>
+                {{-- <p>&nbsp;</p> --}}
 
                 <form action="{{ url('/check_assignment/' . $assignment_detailes[0]->id) }}" class="forms-sample"
                     method="post">
@@ -59,7 +58,7 @@
                     @if ($assignment_detailes[0]->grade)
                         <div class="form-group">
                             <label for="grade" class="col-sm-3 col-form-label">
-                                <h5>Grade</h5>
+                                <h6>Grade</h6>
                             </label>
                             <div class="col-sm-9">
                                 <input type="text" name="grade" id="grade" class="form-control"
@@ -69,7 +68,7 @@
                     @else
                         <div class="form-group">
                             <label for="grade" class="col-sm-3 col-form-label">
-                                <h5>Grade</h5>
+                                <h6>Grade</h6>
                             </label>
                             <div class="col-sm-9">
                                 <input type="text" name="grade" id="grade" class="form-control"
@@ -81,7 +80,7 @@
                     @if ($assignment_detailes[0]->note)
                         <div class="form-group">
                             <label for="note" class="col-sm-3 col-form-label">
-                                <h5>Note</h5>
+                                <h6>Note</h6>
                             </label>
                             <div class="col-sm-9">
                                 <input type="text" name="note" id="note" class="form-control"
@@ -91,7 +90,7 @@
                     @else
                         <div class="form-group">
                             <label for="note" class="col-sm-3 col-form-label">
-                                <h5>Note</h5>
+                                <h6>Note</h6>
                             </label>
                             <div class="col-sm-9">
                                 <input type="text" name="note" id="note" class="form-control"

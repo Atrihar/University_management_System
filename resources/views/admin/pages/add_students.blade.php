@@ -20,7 +20,7 @@
                                 <div class="tab-content rounded-bottom">
 
                                     <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-1003">
-                                        <form method="post" action="{{ url('student/addstudent') }}" class="row g-3">
+                                        <form method="post" action="{{ url('student/addstudent') }}" enctype="multipart/form-data" class="row g-3">
                                             @csrf
 
                                             <div class="col-md-12">

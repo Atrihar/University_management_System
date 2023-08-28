@@ -128,20 +128,31 @@ class TeacherController extends Controller
 
     public function crate_assignment($id, Request $req){
 
+        $asgmt = new Assignment();
+
         $name = $req->name;
         $group_id = $req->$id;
         $due = $req->due;
-        $attachment = $req->attachment;
+        // $attachment = $req->attachment;
         $ques = $req->ques;
+
+        $file = $req->file('attachment');
+        if ($file) {
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            // dd($filename);
+            $filePath = public_path() . '/asset/';
+            $file->move($filePath, $filename);
+            $asgmt->attachment = $filename;
+        }
 
         // dd( $id);
 
-        $asgmt = new Assignment();
         $asgmt->name = $name;
         $asgmt->group_id = $id;
         $asgmt->due = $due;
         $asgmt->ques = $ques;
-        // $asgmt->attachment = $attachment;
+
+
         if ($asgmt->save()) {
             return redirect()->back();
         }

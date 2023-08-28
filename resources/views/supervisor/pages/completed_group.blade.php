@@ -13,18 +13,18 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name
+                                    <th class="align-middle text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">Name
                                     </th>
-                                    <th class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                    <th class="align-middle text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">
                                         Project Name</th>
                                     <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
                                         Grade</th>
                                     <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
                                         Started</th>
                                     <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
                                         Ended</th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
@@ -32,7 +32,7 @@
                             <tbody>
                                 @foreach ($group as $g)
                                     <tr>
-                                        <td class="align-middle text-center text-xs font-weight-bold mb-0">
+                                        <td class="align-middle text-center text-sm font-weight-bold mb-0">
                                                 {{ $g->name }}
                                         </td>
                                         <td class="align-middle text-center text-sm">
@@ -42,15 +42,13 @@
                                             <span class="badge badge-sm bg-gradient-secondary">{{ $g->grade }}</span>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-bold">{{ $g->created_at }}</span>
+                                            {{ $g->created_at }}
                                         </td>
                                         <td class="align-middle text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-bold">{{ $g->updated_at }}</span>
+                                            {{ $g->updated_at }}
                                         </td>
 
-                                        <td><a href="{{ url('/completed_group_info/' . $g->id) }}" class="btn btn-info btn-sm"
+                                        <td><a href="{{ url('/completed_group_info/' . $g->id) }}" class="btn btn-info btn-m"
                                             role="button">view</a></td>
                                     </tr>
                                 @endforeach

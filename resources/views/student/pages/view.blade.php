@@ -5,10 +5,11 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Assignment Name: {{ $assignment_detailes[0]->name }}</h4>
+                    <h5 class="card-title">Assignment Name: {{ $assignment_detailes[0]->name }}</h5>
 
+                    <p>&nbsp;</p>
 
-                    <h5>Due: {{ $assignment_detailes[0]->due }}</h5>
+                    <h6>Due: {{ $assignment_detailes[0]->due }}</h6>
 
                     <p>&nbsp;</p>
 
@@ -17,7 +18,7 @@
                         {{ $assignment_detailes[0]->ques }}
                     </p>
 
-                    <p>&nbsp;</p>
+                    {{-- <p>&nbsp;</p> --}}
 
                     @if ($assignment_detailes[0]->attachment)
                         <h6>Attachment: </h6>
@@ -30,7 +31,7 @@
                             </a>
                         </p>
 
-                        <p>&nbsp;</p>
+                        {{-- <p>&nbsp;</p> --}}
                     @endif
 
                     @if ($assignment_detailes[0]->note)
@@ -39,18 +40,18 @@
                             {{ $assignment_detailes[0]->note }}
                         </p>
 
-                        <p>&nbsp;</p>
+                        {{-- <p>&nbsp;</p> --}}
                     @endif
 
 
-                    <h4>Submit here</h4>
+                    <h5>Submit here</h5>
                     <form action="{{ url('submit_assignment/' . $assignment_detailes[0]->id) }}"
                         enctype="multipart/form-data" method="post">
                         @csrf
                         @if ($assignment_detailes[0]->ansr)
                             <div class="form-group">
                                 <label for="ansr" class="col-sm-3 col-form-label">
-                                    <h5>Answer</h5>
+                                    <h6>Answer</h6>
                                 </label>
                                 <div class="col-sm-9">
                                     <input type="text" name="ansr" id="ansr" class="form-control"

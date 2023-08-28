@@ -5,7 +5,7 @@
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header pb-0">
-                    <h6>Authors table</h6>
+                    <h6>On Going Groups</h6>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
@@ -14,26 +14,26 @@
                             <thead>
                                 <tr>
                                     <th
-                                        class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        class="align-middle text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
                                         Name
                                     </th>
                                     <th
-                                        class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        class="align-middle text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">
                                         Question</th>
                                     <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
                                         Attachment</th>
                                     <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
                                         Due</th>
                                     <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
                                         Ans</th>
                                     <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
                                         Sumbitted</th>
                                     <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
                                         Grade</th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
@@ -41,30 +41,28 @@
                             <tbody>
                                 @foreach ($assignment as $u)
                                     <tr>
-                                        <td class="align-middle text-center text-xs font-weight-bold mb-0">
+                                        <td class="align-middle text-center text-sm font-weight-bold mb-0">
                                             {{ $u->name }}
                                         </td>
                                         <td class="align-middle text-center text-sm">
                                             {{ $u->ques }}
                                         </td>
                                         <td class="align-middle text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-bold">{{ $u->attachment }}</span>
+                                            {{ $u->attachment }}
                                         </td>
                                         <td class="align-middle text-center">
-                                            <span class="text-secondary text-xs font-weight-bold">{{ $u->due }}</span>
+                                            {{ $u->due }}
                                         </td>
                                         <td class="align-middle text-center">
-                                            <span class="text-secondary text-xs font-weight-bold">{{ $u->ans }}</span>
+                                            {{ $u->ans }}
                                         </td>
                                         <td class="align-middle text-center">
-                                            <span
-                                                class="text-secondary text-xs font-weight-bold">{{ $u->submission }}</span>
+                                            {{ $u->submission }}
                                         </td>
                                         <td class="align-middle text-center">
-                                            <span class="text-secondary text-xs font-weight-bold">{{ $u->grade }}</span>
+                                            {{ $u->grade }}
                                         </td>
-                                        <td><a href="{{ url('/assignment_info/' . $u->id) }}" class="btn btn-info btn-sm"
+                                        <td><a href="{{ url('/assignment_info/' . $u->id) }}" class="btn btn-info btn-m"
                                                 role="button">view</a></td>
                                     </tr>
                                 @endforeach
@@ -72,7 +70,7 @@
 
                         </table>
                         <p> &nbsp; </p>
-                        <a href="{{ url('/new_task/' . $x) }}" class="btn btn-dark btn-sm" role="button">Create
+                        &emsp;&emsp; <a href="{{ url('/new_task/' . $x) }}" class="btn btn-dark btn-m" role="button">Create
                             Assignment</a>
                     </div>
                 </div>

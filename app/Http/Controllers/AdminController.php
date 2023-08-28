@@ -99,6 +99,10 @@ class AdminController extends Controller
         $role = $req->role;
         $is_approved = 1;
 
+        $profile_pic = $req->profile_pic;
+        $img = $profile_pic->getClientOriginalName();
+        $profile_pic->storeAs('public/image',$img);
+
         if ($password == $cnf_password) {
             $user_exists = Teacher::where('email', '=', $email)->first();
             if ($user_exists) {
@@ -106,6 +110,7 @@ class AdminController extends Controller
             } else {
                 $user = new Teacher();
                 $user->name = $name;
+                $user->profile_pic = $img;
                 $user->email = $email;
                 $user->contact_no = $contact_no;
                 $user->fathers_name = $fathers_name;
@@ -130,6 +135,7 @@ class AdminController extends Controller
 
     public function addstudent(Request $req)
     {
+        // dd($req->all());
         $name = $req->name;
         $std_ID = $req->std_ID;
         $email = $req->email;
@@ -150,6 +156,12 @@ class AdminController extends Controller
         $is_approved = 1;
         $password = $req->password;
         $cnf_password = $req->cnf_password;
+
+
+        $profile_pic = $req->profile_pic;
+        $img = $profile_pic->getClientOriginalName();
+        $profile_pic->storeAs('public/image',$img);
+
         if ($password == $cnf_password) {
             $user_exists = Student::where('email', '=', $email)->first();
             if ($user_exists) {
@@ -157,6 +169,7 @@ class AdminController extends Controller
             } else {
                 $user = new Student();
                 $user->name = $name;
+                $user->profile_pic = $img;
                 $user->std_ID = $std_ID;
                 $user->email = $email;
                 $user->contact_no = $contact_no;

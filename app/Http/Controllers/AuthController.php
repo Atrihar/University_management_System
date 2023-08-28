@@ -152,7 +152,7 @@ class AuthController extends Controller
                 Session::put('userrole', $user->role);
                 Session::put('userid', $user->id);
                 if ($user->role != 'Admin') {
-                    return redirect('/teacher',);
+                    return redirect('/teacher/profile',);
                 } else {
                     return redirect('/admin');
                 }

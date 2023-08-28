@@ -14,19 +14,19 @@
                     <table class="table align-items-center mb-0">
                         <thead>
                             <tr>
-                                <th class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                <th class="align-middle text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">
                                     ID</th>
                                 <th
-                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
                                     Name</th>
                                 <th
-                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                    E-mail</th>
+                                    class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
+                                    Email</th>
                                 <th
-                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                    Contact-no</th>
+                                    class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
+                                    Contact No</th>
                                 <th
-                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
                                     Batch</th>
                                 <th class="text-secondary opacity-7"></th>
                             </tr>
@@ -34,7 +34,7 @@
                         <tbody>
                             @foreach ($student_info as $s)
                                 <tr>
-                                    <td class="align-middle text-center text-xs font-weight-bold mb-0">
+                                    <td class="align-middle text-center text-sm font-weight-bold mb-0">
                                         {{ $s->std_ID }}
                                     </td>
                                     <td class="align-middle text-center text-sm">

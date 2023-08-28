@@ -21,7 +21,13 @@ class StudentController extends Controller
     {
         $id = $req->session()->get('userid');
 
-        $assignment_info = DB::table('assignments')
+        $group = DB::table('group_members')
+            ->select('*')
+            ->where('s_id', '=', $id)
+            ->get();
+
+        if ($group) {
+            $assignment_info = DB::table('assignments')
             ->select('assignments.id', 'assignments.group_id', 'assignments.name', 'assignments.ques', 'assignments.attachment', 'assignments.ans', 'assignments.due', 'assignments.submission', 'assignments.grade', 'assignments.status')
             ->join('group_members', 'assignments.group_id', '=', 'group_members.group_id')
             ->where('group_members.s_id', '=', $id)
@@ -30,6 +36,12 @@ class StudentController extends Controller
         // dd($id);
         // dd($assignment_info);
         return view('student.pages.Assignment', compact('assignment_info'));
+        } else {
+            return redirect('student/create');
+        }
+
+
+
     }
 
     public function profile(Request $req)
@@ -47,17 +59,22 @@ class StudentController extends Controller
     {
         $id = $req->session()->get('userid');
         // dd($id);
-        $find = Group_member::find($id);
-        // dd($find);
 
-        if ($find) {
-            $group = DB::table('group_members')
-                ->select('*')
-                ->where('s_id', '=', $id)
-                ->get();
+        $group = DB::table('group_members')
+            ->select('*')
+            ->where('s_id', '=', $id)
+            ->get();
 
-         dd($group);
+        // dd($group);
+        $check = empty($group[0]->group_id);
+
+        // dd($check);
+
+
+        if ($check == false) {
+
             $g_id = $group[0]->group_id;
+        //  dd($group);
 
             $student_info = DB::table('students')
                 ->select('*')

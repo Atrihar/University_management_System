@@ -6,28 +6,28 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Group name: <strong>{{ $group->name }}</strong> </h4>
+                <h5 class="card-title">Group name: <strong>{{ $group->name }}</strong> </h5>
                 <p>&nbsp;</p>
-                <h5>Students</h5>
+                <h6>Students</h6>
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Contact</th>
-                                <th>Batch</th>
+                                <th class="align-middle text-center text-sm">ID</th>
+                                <th class="align-middle text-center text-sm">Name</th>
+                                <th class="align-middle text-center text-sm">Email</th>
+                                <th class="align-middle text-center text-sm">Contact</th>
+                                <th class="align-middle text-center text-sm">Batch</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($student as $s)
                                 <tr>
-                                    <td>{{ $s->std_ID }}</td>
-                                    <td>{{ $s->name }}</td>
-                                    <td>{{ $s->email }}</td>
-                                    <td>{{ $s->contact_no }}</td>
-                                    <td>{{ $s->batch }}</td>
+                                    <td class="align-middle text-center text-sm">{{ $s->std_ID }}</td>
+                                    <td class="align-middle text-center text-sm">{{ $s->name }}</td>
+                                    <td class="align-middle text-center text-sm">{{ $s->email }}</td>
+                                    <td class="align-middle text-center text-sm">{{ $s->contact_no }}</td>
+                                    <td class="align-middle text-center text-sm">{{ $s->batch }}</td>
 
                                 </tr>
                             @endforeach
@@ -36,31 +36,31 @@
                 </div>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
-                <h5>Assignments</h5>
+                <h6>Assignments</h6>
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Question</th>
-                                <th>Attachment</th>
-                                <th>Due</th>
-                                <th>Ans</th>
-                                <th>Sumbitted At</th>
-                                <th>Grade</th>
+                                <th class="align-middle text-center text-sm">Name</th>
+                                <th class="align-middle text-center text-sm">Question</th>
+                                <th class="align-middle text-center text-sm">Attachment</th>
+                                <th class="align-middle text-center text-sm">Due</th>
+                                <th class="align-middle text-center text-sm">Ans</th>
+                                <th class="align-middle text-center text-sm">Sumbitted At</th>
+                                <th class="align-middle text-center text-sm">Grade</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($assignment as $u)
                                 <tr>
-                                    <td>{{ $u->name }}</td>
-                                    <td>{{ $u->ques }}</td>
-                                    <td>{{ $u->attachment }}</td>
-                                    <td>{{ $u->due }}</td>
-                                    <td>{{ $u->ans }}</td>
-                                    <td>{{ $u->submission }}</td>
-                                    <td>{{ $u->grade }}</td>
-                                    <td><a href="{{ url('/assignment_info/' . $u->id) }}" class="btn btn-info btn-sm"
+                                    <td class="align-middle text-center text-sm">{{ $u->name }}</td>
+                                    <td class="align-middle text-center text-sm">{{ $u->ques }}</td>
+                                    <td class="align-middle text-center text-sm">{{ $u->attachment }}</td>
+                                    <td class="align-middle text-center text-sm">{{ $u->due }}</td>
+                                    <td class="align-middle text-center text-sm">{{ $u->ans }}</td>
+                                    <td class="align-middle text-center text-sm">{{ $u->submission }}</td>
+                                    <td class="align-middle text-center text-sm">{{ $u->grade }}</td>
+                                    <td><a href="{{ url('/assignment_info/' . $u->id) }}" class="btn btn-info btn-m"
                                         role="button">view</a></td>
 
                                 </tr>
