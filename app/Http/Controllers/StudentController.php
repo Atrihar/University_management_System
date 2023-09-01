@@ -28,20 +28,17 @@ class StudentController extends Controller
 
         if ($group) {
             $assignment_info = DB::table('assignments')
-            ->select('assignments.id', 'assignments.group_id', 'assignments.name', 'assignments.ques', 'assignments.attachment', 'assignments.ans', 'assignments.due', 'assignments.submission', 'assignments.grade', 'assignments.status')
-            ->join('group_members', 'assignments.group_id', '=', 'group_members.group_id')
-            ->where('group_members.s_id', '=', $id)
-            ->get();
+                ->select('assignments.id', 'assignments.group_id', 'assignments.name', 'assignments.ques', 'assignments.attachment', 'assignments.ans', 'assignments.due', 'assignments.submission', 'assignments.grade', 'assignments.status')
+                ->join('group_members', 'assignments.group_id', '=', 'group_members.group_id')
+                ->where('group_members.s_id', '=', $id)
+                ->get();
 
-        // dd($id);
-        // dd($assignment_info);
-        return view('student.pages.Assignment', compact('assignment_info'));
+            // dd($id);
+            // dd($assignment_info);
+            return view('student.pages.Assignment', compact('assignment_info'));
         } else {
             return redirect('student/create');
         }
-
-
-
     }
 
     public function profile(Request $req)
@@ -74,7 +71,7 @@ class StudentController extends Controller
         if ($check == false) {
 
             $g_id = $group[0]->group_id;
-        //  dd($group);
+            //  dd($group);
 
             $student_info = DB::table('students')
                 ->select('*')
@@ -87,9 +84,16 @@ class StudentController extends Controller
                 ->select('*')
                 ->where('id', '=', $g_id)
                 ->get();
-            // dd($group_name);
+                // dd($group_name);
 
-            return view('student.pages.group', compact('student_info', 'group_name'));
+            $t_name = DB::table('teachers')
+                ->select('teachers.name as tname')
+                ->join('groups', 'teachers.id', '=', 'groups.instructor_id')
+                ->where('groups.id', '=', $group_name[0]->id)
+                ->get();
+
+            // dd($t_name);
+            return view('student.pages.group', compact('student_info', 'group_name','t_name'));
         } else {
             return redirect('student/create');
         }

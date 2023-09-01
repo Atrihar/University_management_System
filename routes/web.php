@@ -49,6 +49,16 @@ Route::middleware(['Login'])->group(function () {
         Route::get('/delete_instructor/{id}', [AdminController::class, 'delete_instructor']);
         Route::get('/edit_instructor/{id}', [AdminController::class, 'edit_instructor']);
         Route::post('/update_instructor/{id}', [AdminController::class, 'update_instructor']);
+
+        Route::get('admin/completed_group', [AdminController::class, 'completed_group']);
+        Route::get('admin/running_group', [AdminController::class, 'running_group']);
+
+        Route::get('/completed_group_information/{id}', [AdminController::class, 'completed_group_information']);
+        Route::get('/assignment_information/{id}', [AdminController::class, 'assignment_information']);
+        Route::post('/check_submission/{id}', [AdminController::class, 'check_submission']);
+        Route::get('/running_group_information/{id}', [AdminController::class, 'running_group_information']);
+        Route::get('/new_assignment/{id}', [AdminController::class, 'new_assignment']);
+        Route::post('/crate_new_assignment/{id}', [AdminController::class, 'crate_new_assignment']);
     });
 
 

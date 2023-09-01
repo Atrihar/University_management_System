@@ -14,20 +14,20 @@
                             <thead>
                                 <tr>
                                     <th
-                                        class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        <h6>Name</h6></th>
+                                        class="align-middle text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">
+                                        Name</th>
                                     <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        <h6>Due</h6></th>
+                                        class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
+                                        Due</th>
                                     <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        <h6>Submission Date</h6></th>
+                                        class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
+                                        Submission Date</th>
                                     <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        <h6>Status</h6></th>
+                                        class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
+                                        Status</th>
                                     <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        <h6>Grade</h6></th>
+                                        class="text-center text-uppercase text-secondary text-sm font-weight-bolder opacity-7">
+                                        Grade</th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
                             </thead>
@@ -35,20 +35,20 @@
                             <tbody>
                                 @foreach ($assignment_info as $a)
                                     <tr>
-                                        <td class="align-middle text-center text-m font-weight-bold mb-0">
+                                        <td class="align-middle text-center text-sm font-weight-bold mb-0">
                                             {{ $a->name }}
                                         </td>
-                                        <td class="align-middle text-center text-m">
+                                        <td class="align-middle text-center text-sm">
                                             {{ $a->due }}
                                         </td>
-                                        <td class="align-middle text-center text-m">
+                                        <td class="align-middle text-center text-sm">
                                             {{ $a->submission }}
                                         </td>
-                                        <td class="align-middle text-center text-m">
+                                        <td class="align-middle text-center text-sm">
                                             {{ $a->status }}
                                         </td>
                                         <td class="align-middle text-center">
-                                            <span class="text-secondary text-xs font-weight-bold">{{ $a->grade }}</span>
+                                            <span class="text-secondary text-sm font-weight-bold">{{ $a->grade }}</span>
                                         </td>
                                         <td>
                                             <a href="{{ url('/view/' . $a->id) }}" class="btn btn-info btn-m"

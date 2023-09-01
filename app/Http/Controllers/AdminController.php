@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Student;
 use App\Models\Group;
 use App\Models\Teacher;
+use App\Models\assignment;
 
 use Illuminate\Http\Request;
 
@@ -101,7 +102,7 @@ class AdminController extends Controller
 
         $profile_pic = $req->profile_pic;
         $img = $profile_pic->getClientOriginalName();
-        $profile_pic->storeAs('public/image',$img);
+        $profile_pic->storeAs('public/image', $img);
 
         if ($password == $cnf_password) {
             $user_exists = Teacher::where('email', '=', $email)->first();
@@ -160,7 +161,7 @@ class AdminController extends Controller
 
         $profile_pic = $req->profile_pic;
         $img = $profile_pic->getClientOriginalName();
-        $profile_pic->storeAs('public/image',$img);
+        $profile_pic->storeAs('public/image', $img);
 
         if ($password == $cnf_password) {
             $user_exists = Student::where('email', '=', $email)->first();
@@ -328,6 +329,143 @@ class AdminController extends Controller
 
         if ($obj->save()) {
             return redirect('admin/all_teachers');
+        }
+    }
+
+
+
+    public function completed_group(Request $req)
+    {
+        $id = $req->session()->get('userid');
+        $group = DB::table('groups')
+            ->select('*')
+            ->whereNotNull('grade')
+            ->where('instructor_id', '=', $id)
+            ->get();
+        // dd($group);
+        return view('admin.pages.completed_group', compact('group'));
+    }
+
+    public function completed_group_information($id, Request $req)
+    {
+        $group = Group::find($id);
+
+        $x = (int)$id;
+
+        $assignment = DB::table('assignments')
+            ->select('*')
+            ->where('group_id', '=', $x)
+            ->get();
+
+        $student = DB::table('students')
+            ->select('students.std_ID', 'students.name', 'students.email', 'students.contact_no', 'students.batch')
+            ->join('group_members', 'students.id', '=', 'group_members.s_id')
+            ->where('group_members.group_id', '=', $x)
+            ->get();
+
+        // dd($student);
+        // dd($id);
+        // dd($assignment);
+        // dd(gettype($x));
+
+        return view('admin.pages.complete_assignment', compact('assignment', 'student', 'group'));
+    }
+
+    public function assignment_information($id, Request $req)
+    {
+        $id = (int)$id;
+        // dd($id);
+
+        $assignment_detailes = DB::table('assignments')
+            ->select('*')
+            ->where('id', '=', $id)
+            ->get();
+
+        // dd($assignment_detailes);
+        return view('admin.pages.assignment_information', compact('assignment_detailes'));
+    }
+
+    public function check_submission(Request $req, $id)
+    {
+        $obj = Assignment::find($id);
+        $obj->grade = $req->grade;
+        $obj->note = $req->note;
+        if ($obj->save()) {
+            return redirect()->back();
+        }
+    }
+
+    public function running_group(Request $req)
+    {
+        $id = $req->session()->get('userid');
+        $group = DB::table('groups')
+            ->select('*')
+            ->whereNull('grade')
+            ->where('instructor_id', '=', $id)
+            ->get();
+        // dd($id);
+        return view('admin.pages.running_group', compact('group'));
+    }
+
+    public function running_group_information($id, Request $req)
+    {
+        $group = Group::find($id);
+        // dd($group);
+
+        $x = (int)$id;
+
+        $assignment = DB::table('assignments')
+            ->select('*')
+            ->where('group_id', '=', $x)
+            ->get();
+
+        $student = DB::table('students')
+            ->select('students.std_ID', 'students.name', 'students.email', 'students.contact_no', 'students.batch')
+            ->join('group_members', 'students.id', '=', 'group_members.s_id')
+            ->where('group_members.group_id', '=', $x)
+            ->get();
+
+
+        return view('admin.pages.running_assignment', compact('assignment', 'x', 'student', 'group'));
+    }
+
+
+    public function new_assignment($id, Request $req)
+    {
+        $group = Group::find($id);
+        return view('admin.pages.new_assignment', compact('group'));
+    }
+
+    public function crate_new_assignment($id, Request $req)
+    {
+
+        $asgmt = new Assignment();
+
+        $name = $req->name;
+        $group_id = $req->$id;
+        $due = $req->due;
+        // $attachment = $req->attachment;
+        $ques = $req->ques;
+
+        $file = $req->file('attachment');
+        if ($file) {
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            // dd($filename);
+            $filePath = public_path() . '/asset/';
+            $file->move($filePath, $filename);
+            $asgmt->attachment = $filename;
+        }
+
+        // dd( $id);
+
+        $asgmt->name = $name;
+        $asgmt->group_id = $id;
+        $asgmt->due = $due;
+        $asgmt->ques = $ques;
+
+
+        if ($asgmt->save()) {
+            return redirect()->back();
         }
     }
 }
